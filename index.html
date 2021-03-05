@@ -1,12 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>公纸晓白的主页</title>
-</head>
-<body>
-  <h1>公纸晓白</h1>
-  <div>公纸晓白</div>
-</body>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公纸晓白的主页</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0
+      }
+
+      .all {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #f8f8f8;
+        background: url(./public/img/aotubg.png) #f6f6f6;
+      }
+
+      .header {
+        width: 100%;
+        height: 80px;
+        background-color: #2177b8;
+        color: #333333;
+        text-align: center;
+        line-height: 80px;
+        letter-spacing: 8px;
+        position: relative;
+        box-shadow: 0px 2px 10px #003399;
+      }
+
+      .header img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+      }
+
+      .ifa {
+        position: relative;
+        width: 200px;
+        height: 193px;
+        overflow: hidden;
+        /* margin: 20px auto; */
+        /* margin-top: 10px; */
+        position: absolute;
+        top: 90px;
+        left: 0px;
+      }
+
+      .ifa iframe {
+        width: 200px;
+        height: 280px;
+        position: absolute;
+        top: -49px;
+        left: -5px;
+      }
+
+      .list {
+        width: 1150px;
+        min-height: 85vh;
+        padding: 15px;
+        background-color: #f8f8f8;
+        margin: 20px auto;
+
+        display: grid;
+        grid-template-columns: 49% 49%;
+        grid-template-rows: 300px 300px;
+        justify-content: space-between;
+      }
+
+      .card {
+        background-color: #003366;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        color: #fff;
+      }
+      .card .title{
+        font-size: 18px;
+        font-weight: 600;
+        padding: 8px 10px;
+      }
+      .rowlist{
+        height: 250px;
+        padding: 0px 40px;
+        overflow: auto;
+      }
+      .card .row{
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .row:hover{
+        color: #cac4c4;
+      }
+      .card ul {
+        padding: 8px 25px;
+      }
+      .card ul li{
+        cursor: pointer;
+        font-size: 16px;
+        height: 25px;
+        /* line-height: 30px; */
+        /* padding-left: 25px; */
+      }
+      .card li:hover{
+        color: #cac4c4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="all">
+      <div class="header">
+        <h1>公纸晓白</h1>
+        <img src="./public/img/head.jpg">
+      </div>
+      <div class="main">
+        <div class="ifa">
+          <iframe scrolling="no" src="https://gongzhixiaobai.github.io/git/2015211892_ZHAO_WEN_QIANG/biao/biao3.html"
+            frameborder="0"></iframe>
+        </div>
+        <div class="list">
+          <div class="card">
+            <div class="title">我的文章</div>
+            <div class="rowlist">
+              <div class="row" onclick="towhere('https://www.jianshu.com')">简书文章：主要记录一些问题和技巧</div>
+              <ul>
+                <li onclick="towhere('https://www.jianshu.com/writer#/notebooks/46857779/notes/73753522')">面试相关</li>
+                <li onclick="towhere('https://www.jianshu.com/writer#/notebooks/28865348/notes/54264723')">简记随笔</li>
+                <li onclick="towhere('https://www.jianshu.com/writer#/notebooks/29507622/notes/33869716')">python</li>
+              </ul>
+              <div class="row">网站文章：记录一些遇到的问题</div>
+              <ul>
+                <li>文章1</li>
+                <li>文章2</li>
+                <li>文章3</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="title">我的代码库</div>
+            <div class="rowlist">
+              <div class="row" onclick="towhere('https://github.com')">Github：主要记录代码</div>
+              <ul>
+                <li onclick="towhere('https://github.com/GongZhiXiaoBai/GongZhiXiaoBai.github.io')">首页本体</li>
+                <li onclick="towhere('https://github.com/GongZhiXiaoBai/cos-wx-sdk-v5')">腾讯云 COS 小程序 SDK</li>
+                <li onclick="towhere('https://github.com/GongZhiXiaoBai/git')">代码仓库</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="title">最近学习</div>
+            <div class="rowlist">
+              <div class="row" onclick="towhere('https://www.jianshu.com/writer#/notebooks/46857779/notes/73753522')">面试相关</div>
+              <div class="row" onclick="towhere('https://www.jianshu.com/writer#/notebooks/29507622/notes/33869716')">python</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="foot"></div>
+    </div>
+    <script>
+      function towhere(a){
+        window.open(a);
+      }
+    </script>
+  </body>
+
 </html>
+<!DOCTYPE html>
