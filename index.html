@@ -185,26 +185,26 @@
     console.log('sasdadsadad hyperlinknlinl',isMiniProgram(navigator.userAgent),isWeChat(navigator.userAgent),isApp(navigator.userAgent),navigator.userAgent,getPlatformFromUA(navigator.userAgent))
         window.location.href = a
       }
-function isWeChat = (ua) => {
+function isWeChat (ua) {
   const pattern = /MicroMessenger/ig;
   return pattern.test(ua);
 };
 
-function isApp = (ua) => {
+function isApp (ua) {
   const pattern = /DisneyRA/;
   return pattern.test(ua);
 };
 
-function isHybrid = (ua) => {
+function isHybrid (ua) {
   const pattern = /DISNEY_MOBILE_/i;
   return pattern.test(ua);
 };
 
-function isMiniProgram = (ua) => {
+function isMiniProgram (ua) {
   const pattern = /miniprogram/i;
   return pattern.test(ua);
 };
-function isMobileWeb = (ua) => {
+function isMobileWeb (ua) {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
 };
 let APP = 'App';
@@ -213,7 +213,7 @@ let WE_CHAT = 'WeChat';
 let MINI_PROGRAM= 'MiniProgram';
 let BROWSERM = 'BrowserM';  // mobile browser
 let BROWSER = 'Browser'; // PC | tablet
-function getPlatformFromUA = (ua) => {
+function getPlatformFromUA (ua)  {
   if (isApp(ua)) {
     return APP;
   }
