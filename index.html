@@ -182,8 +182,56 @@
         window.open(a);
       }
       function tohref(a){
+    console.log('sasdadsadad hyperlinknlinl',isMiniProgram(navigator.userAgent),isWeChat(navigator.userAgent),isApp(navigator.userAgent),navigator.userAgent,getPlatformFromUA(navigator.userAgent))
         window.location.href = a
       }
+export const isWeChat = (ua:string) => {
+  const pattern = /MicroMessenger/ig;
+  return pattern.test(ua);
+};
+
+export const isApp = (ua:string) => {
+  const pattern = /DisneyRA/;
+  return pattern.test(ua);
+};
+
+export const isHybrid = (ua:string) => {
+  const pattern = /DISNEY_MOBILE_/i;
+  return pattern.test(ua);
+};
+
+export const isMiniProgram = (ua:string) => {
+  const pattern = /miniprogram/i;
+  return pattern.test(ua);
+};
+export const isMobileWeb = (ua: string): boolean => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+};
+export type BrowserEnv = 'App' | 'Hybrid' | 'WeChat' | 'MiniProgram' | 'BrowserM' | 'Browser';
+export const APP: BrowserEnv = 'App';
+export const HYBRID: BrowserEnv = 'Hybrid';
+export const WE_CHAT: BrowserEnv = 'WeChat';
+export const MINI_PROGRAM: BrowserEnv = 'MiniProgram';
+export const BROWSERM: BrowserEnv = 'BrowserM';  // mobile browser
+export const BROWSER: BrowserEnv = 'Browser'; // PC | tablet
+export const getPlatformFromUA = (ua: string): BrowserEnv => {
+  if (isApp(ua)) {
+    return APP;
+  }
+  if (isHybrid(ua)) {
+    return HYBRID;
+  }
+  if (isWeChat(ua)) {
+    if (isMiniProgram(ua)) {
+      return MINI_PROGRAM;
+    }
+    return WE_CHAT;
+  }
+  if (isMobileWeb(ua)) {
+    return BROWSERM;
+  }
+  return BROWSER;
+};
     </script>
   </body>
 
