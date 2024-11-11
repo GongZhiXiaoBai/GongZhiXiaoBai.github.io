@@ -185,36 +185,35 @@
     console.log('sasdadsadad hyperlinknlinl',isMiniProgram(navigator.userAgent),isWeChat(navigator.userAgent),isApp(navigator.userAgent),navigator.userAgent,getPlatformFromUA(navigator.userAgent))
         window.location.href = a
       }
-export const isWeChat = (ua:string) => {
+function isWeChat = (ua:string) => {
   const pattern = /MicroMessenger/ig;
   return pattern.test(ua);
 };
 
-export const isApp = (ua:string) => {
+function isApp = (ua:string) => {
   const pattern = /DisneyRA/;
   return pattern.test(ua);
 };
 
-export const isHybrid = (ua:string) => {
+function isHybrid = (ua:string) => {
   const pattern = /DISNEY_MOBILE_/i;
   return pattern.test(ua);
 };
 
-export const isMiniProgram = (ua:string) => {
+function isMiniProgram = (ua:string) => {
   const pattern = /miniprogram/i;
   return pattern.test(ua);
 };
-export const isMobileWeb = (ua: string): boolean => {
+function isMobileWeb = (ua: string): boolean => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
 };
-export type BrowserEnv = 'App' | 'Hybrid' | 'WeChat' | 'MiniProgram' | 'BrowserM' | 'Browser';
-export const APP: BrowserEnv = 'App';
-export const HYBRID: BrowserEnv = 'Hybrid';
-export const WE_CHAT: BrowserEnv = 'WeChat';
-export const MINI_PROGRAM: BrowserEnv = 'MiniProgram';
-export const BROWSERM: BrowserEnv = 'BrowserM';  // mobile browser
-export const BROWSER: BrowserEnv = 'Browser'; // PC | tablet
-export const getPlatformFromUA = (ua: string): BrowserEnv => {
+let APP = 'App';
+let HYBRID = 'Hybrid';
+let WE_CHAT = 'WeChat';
+let MINI_PROGRAM= 'MiniProgram';
+let BROWSERM = 'BrowserM';  // mobile browser
+let BROWSER = 'Browser'; // PC | tablet
+function getPlatformFromUA = (ua: string): => {
   if (isApp(ua)) {
     return APP;
   }
