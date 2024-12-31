@@ -169,9 +169,6 @@
 <!--               <div class="row" onclick="tohref('wdpr-shdr://about')">about tohref</div> -->
               <div class="row" onclick='tohref1()'>微信WXMinProgram1 tohref</div>
               <div class="row" onclick='tohref2()'>微信WXMinProgram1 tohref</div>
-              <div class="row" onclick='tohref3()'>微信WXMinProgram1 tohref</div>
-              <div class="row" onclick='tohref4()'>微信WXMinProgram1 tohref</div>
-              <div class="row" onclick='tohref5()'>微信WXMinProgram1 tohref</div>
               <div class="row" onclick="towhere('https://github.com/GongZhiXiaoBai/GongZhiXiaoBai.github.io')">首页本体</div>
 <!--               <div class="row" onclick="alerts()">微信1 open</div> -->
             
@@ -191,19 +188,10 @@
         window.location.href = a
       }
       function tohref1(){
-        window.location.href = "weixin://dl/business/?appid=wx47997baad1c7a551&path="
+        alert(navigator.connection.downlink+' | '+navigator.connection.effectiveType+' | '+navigator.connection.rtt+' | '+navigator.connection.saveData)
       }
       function tohref2(){
         window.location.href = "weixin://dl/business/?appid=wx47997baad1c7a551&path=pages/index/index"
-      }
-      function tohref3(){
-        window.location.href = "weixin://dl/business/?appid=wx47997baad1c7a551"
-      }
-      function tohref4(){
-        window.location.href = "appid=wx47997baad1c7a551&path="
-      }
-      function tohref5(){
-        window.location.href = "appid=wx47997baad1c7a551&path=pages/index/index"
       }
 function isWeChat (ua) {
   const pattern = /MicroMessenger/ig;
